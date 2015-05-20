@@ -64,7 +64,7 @@
                                     <outlet property="date" destination="1z3-IJ-1WF" id="zSZ-90-wFM"/>
                                     <outlet property="price" destination="bLt-2e-T8V" id="S4M-Aw-9Rf"/>
                                     <outlet property="title" destination="koy-zA-yI2" id="aD9-dt-FYj"/>
-                                    <segue destination="RPN-Kl-Us2" kind="showDetail" id="KAP-gQ-3Ab"/>
+                                    <segue destination="RPN-Kl-Us2" kind="show" id="KAP-gQ-3Ab"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -125,6 +125,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KxU-75-fwL">
+                                <rect key="frame" x="16" y="392" width="44" height="30"/>
+                                <state key="normal" title="Delete">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteAd:" destination="RPN-Kl-Us2" eventType="touchUpInside" id="bZL-hR-Exu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

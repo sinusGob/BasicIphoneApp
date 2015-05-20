@@ -51,15 +51,20 @@ class MainViewTable: PFQueryTableViewController {
         cell.date.text = NSString(format: "%@", dateFormat.stringFromDate(dateUpdated)) as String
             
         }
-
         
         if let titleName = object?["title"] as? String {
             cell.title.text = titleName
         }
         
+        var phoneNumber = object?["phone"] as? Int;
+        
+        var desc = object?["desc"] as? String;
+        
+        var password = object?["password"] as? String
+        
         if let priceTitle = object?["price"] as? Int {
             cell.price.text = String(priceTitle)
-          
+
         }
         
         var initialThumbnail = UIImage(named: "AppIcon")
@@ -73,12 +78,13 @@ class MainViewTable: PFQueryTableViewController {
         return cell
     }
     
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         // Get the new view controller using [segue destinationViewController].
 //        var nav = segue.destinationViewController as! UINavigationController
 //        var detailScene = nav.topViewController as! DetailViewController
-          var detailScene = segue.destinationViewController as! DetailViewController
+        var detailScene = segue.destinationViewController as! DetailViewController
         
         // Pass the selected object to the destination view controller.
         if let indexPath = self.tableView.indexPathForSelectedRow() {
@@ -87,13 +93,11 @@ class MainViewTable: PFQueryTableViewController {
         }
     }
     
-    
-    override func viewDidAppear(animated: Bool) {
+    override func viewWillAppear(animated: Bool) {
         
         // Refresh the table to ensure any data changes are displayed
         tableView.reloadData()
     }
-    
-    
+
    
 }
